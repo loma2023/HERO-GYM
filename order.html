@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/logo.jpg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <title>Your Order</title>
+</head>
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header"></header>
+
+    <!-- header section ends -->
+
+
+    <!-- shopping cart section starts  -->
+
+    <section class="shopping-cart">
+        <div class="order-table">
+            <h1 class="heading">your <span>order</span></h1>
+
+            <h3> Date : <span class="DateOrder"> </span></h3>
+            <h3> Name : <span class="NameCustomer"> </span></h3>
+            <h3> Phone : <span class="PhoneCustomer"> </span></h3>
+            <h3> Address : <span class="AddressCustomer"> </span></h3>
+            <h3> Notes : <span class="NotesCustomer"> </span></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <td>الصنف</td>
+                        <td>مواصفات</td>
+                        <td>سعر الوحده</td>
+                        <td>الكميه</td>
+                    </tr>
+                </thead>
+
+                <tbody class="table-body"></tbody>
+            </table>
+            <h3> subTotal : <span class="subtotal_order"></span> </h3>
+            <h3> Delivery : <span class="Delivery_order"></span> </h3>
+            <h3> Total : <span class="total_order"></span> </h3>
+            <input type="button" onclick="insert_value()" class="btn" value="تأكيد الطلب">
+
+        </div>
+    </section>
+
+    <!-- shopping cart section ends -->
+
+
+    <!-- footer section starts  -->
+
+    <section class="quick-links"></section>
+    <section class="credit"></section>
+
+
+    <!-- footer section ends -->
+
+
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <script src="js/partails.js"></script>
+    <script src="js/order.js"></script>
+
+</body>
+
+</html>

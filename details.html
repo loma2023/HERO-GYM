@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/logo.jpg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Details</title>
+</head>
+<body>
+    <header class="header"></header>
+    <section class="products">
+        <div class="box-container"></div>
+    </section>
+    <section class="quick-links"></section>
+    <section class="credit"></section>
+
+
+    <script>
+
+        let title = JSON.parse(localStorage.title)
+        let price = JSON.parse(localStorage.price)
+
+        let photo;
+        if (localStorage.photo != null) {
+            photo = JSON.parse(localStorage.photo)
+        } else {
+            photo = [];
+        }
+        let color;
+        if (localStorage.color != null) {
+            color = JSON.parse(localStorage.color)
+        } else {
+            color = [];
+        }
+        let valuetxt;
+        if (localStorage.valuetxt != null) {
+            valuetxt = JSON.parse(localStorage.valuetxt)
+        } else {
+            valuetxt = [];
+        }
+        let value;
+        if (localStorage.value != null) {
+            value = JSON.parse(localStorage.value)
+        } else {
+            value = [];
+        }
+
+
+
+        document.querySelector(".box-container").innerHTML = `
+        <div class="box">
+                <div class="image">
+                    <img id="" src="${photo[0]}" class="main-img" alt="">
+                    <img src="${photo[0]}" class="hover-img" alt="">
+                    <div class="icons">
+                        <a class="fas fa-shopping-cart"></a>
+                        <a class="fas fa-heart"></a>
+                    </div>
+                    <div class="small-image"></div>
+                </div>
+                <div class="content">
+                    <h3 class="title">${title}</h3>
+                    <div class="price"><a class="priceItme">${price}</a><span></span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    
+                </div>
+            </div> `
+
+        if (localStorage.valuetxt != null) { document.querySelector(".content").innerHTML += `<select class="select"></select>` }
+
+        for (let i = 0; i < valuetxt.length; i++) {
+            let options;
+            if (localStorage.value != null) {
+                options = `<option value="${value[i]}">${valuetxt[i]}</option>`
+            } else {
+                options = `<option>${valuetxt[i]}</option>`
+            }
+            document.querySelector(".select").innerHTML += options
+        }
+
+        let main_img = document.querySelector(".main-img");
+        for (let i = 0; i < photo.length; i++) {
+            let image;
+            if (localStorage.color != null) {
+                image = `<img id="${color[i]}" class="small-img" src="${photo[i]}" alt="">`
+                main_img.id = color[0];
+            } else {
+                image = `<img class="small-img" src="${photo[i]}" alt="">`
+            }
+            document.querySelector(".small-image").innerHTML += image
+        }
+
+        let myimg = document.querySelectorAll(".small-img");
+        myimg.forEach(img => { img.addEventListener("click", change_img) });
+
+        function change_img(event) {
+            let imgg = event.target;
+            let parant_img = imgg.parentElement.parentElement.parentElement;
+            let hover_img = parant_img.querySelector(".hover-img");
+            let main_img = parant_img.querySelector(".main-img");
+            hover_img.src = this.src;
+            main_img.src = this.src;
+            main_img.id = this.id
+
+        }
+    </script>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="js/partails.js"></script>
+    <script src="js/products.js"></script>
+
+</body>
+
+</html>

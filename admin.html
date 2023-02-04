@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/logo.jpg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <title>Your Order</title>
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header"></header>
+
+    <!-- header section ends -->
+
+
+    <!-- shopping cart section starts  -->
+
+    <section class="admin">
+        <div class="order-table">
+            <h1 class="heading">your <span>orders</span></h1>
+            <table>
+                
+                <thead>
+                    <tr>
+                        <th>date</th>
+                        <th>name</th>
+                        <th>phone</th>
+                        <th>address</th>
+                        <th>notes</th>
+                        <th>total</th>
+                        <th>remove</th>
+                    </tr>
+                </thead>
+
+                <tbody class="table-body"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- shopping cart section ends -->
+
+
+    <!-- footer section starts  -->
+
+    <section class="quick-links"></section>
+    <section class="credit"></section>
+
+
+    <!-- footer section ends -->
+
+
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <script src="js/partails.js"></script>
+
+    <script>
+
+
+        fetch('https://script.google.com/macros/s/AKfycbwM2Wj1suXYuw0mz9u_bn20jRWqA-X8n0FkHaWf5foknx4IgiyaF2_ZHKGxbVmvfzAMqw/exec')
+            .then((response) => response.json())
+            .then((row) => sss(row))
+
+        function sss(row) {
+            let element = "";
+            let colum = "";
+            for (let i = 1; i < row.length; i++) {
+
+                colum = row[i];
+                element += `
+                <tr>
+                    <td>${colum[1]}</td>
+                    <td>${colum[2]}</td>
+                    <td>${colum[3]}</td>
+                    <td>${colum[4]}</td>
+                    <td>${colum[5]}</td>
+                    <td>${colum[6]}</td>
+                    <td><a id="${colum[0]}" onclick="deletevalue(event)" class="fas fa-trash"></a>
+                        <a id="${colum[0]}" onclick="deletevalue(event)" class="fas fa-eye"></a></td>
+                </tr>
+                `
+
+            }
+            document.querySelector(".table-body").innerHTML = element
+
+        }
+
+        var script_url = "https://script.google.com/macros/s/AKfycbwM2Wj1suXYuw0mz9u_bn20jRWqA-X8n0FkHaWf5foknx4IgiyaF2_ZHKGxbVmvfzAMqw/exec";
+      
+        function deletevalue(event){
+            let btn = event.target;
+            let id1 = btn.id ;
+            let name = "";
+            let parent = btn.parentElement.parentElement
+    
+            var url = script_url+"?callback=ctrlq&name="+name+"&id="+id1+"&action=delete";
+        
+            var request = jQuery.ajax({
+            crossDomain: true,
+            url: url ,
+            method: "GET",
+            dataType: "jsonp"
+            });
+
+            parent.remove()
+        }
+
+    </script>
+
+</body>
+
+</html>
+

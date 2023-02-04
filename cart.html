@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/logo.jpg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cart</title>
+</head>
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header"></header>
+
+    <!-- header section ends -->
+
+
+    <!-- shopping cart section starts  -->
+
+    <section class="shopping-cart">
+        <div class="order-form">
+            <h1  class="heading">your <span>products</span></h1>
+
+            <div class="box-container"> </div>
+
+            <div class="cart-total">
+                <h3> subTotal : <span class="cart-total-price"></span> </h3>
+                <h3> Delivery : <span class="Delivery"></span> </h3>
+                <h3> Total : <span class="cart-total-price2"></span> </h3>
+            </div>
+            <div class="contact contact-MyForm">
+                <form name="MyForm">
+                    <h3>ادخل بياناتك</h3>
+                    <div class="inputBox">
+                        <input name="name" type="text" placeholder="your name" class="name" required>
+                        <input name="phone" type="tel" placeholder="your phone" class="phone" required>
+                        <input name="address" type="text" placeholder="your address" class="address" required>
+                        <input name="notes" type="text" placeholder="your notes" class="notes">
+                    </div>
+                    <input type="submit" class="btn" value="ارسال الطلب">
+                </form>
+            </div>
+            <a href="order.html"  class="btn btn_veiw contact-MyForm">عرض طلبك </a>
+        </div>
+    </section>
+
+    <!-- shopping cart section ends -->
+
+
+    <!-- footer section starts  -->
+
+    <section class="quick-links"></section>
+    <section class="credit"></section>
+
+
+    <!-- footer section ends -->
+
+
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <script src="js/partails.js"></script>
+    <script src="js/cart.js"></script>
+
+</body>
+
+</html>

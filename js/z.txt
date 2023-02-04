@@ -1,0 +1,83 @@
+<!-- product banner section starts  -->
+
+<section class="product-banner">
+
+    <h1 class="heading"> <span>deal</span> of the day </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/category1.webp" alt="">
+            <div class="content">
+                <span></span>
+                <h3></h3>
+                <a href="weights-bars.html" class="btn">shop now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/category2.jpg" alt="">
+            <div class="content">
+                <span></span>
+                <h3></h3>
+                <a href="#" class="btn">shop now</a>
+            </div>
+        </div>
+
+    </div>
+    
+</section>
+
+<!-- product banner section ends -->
+
+<!-- banner section starts  -->
+
+<section class="banner">
+
+    <div class="box-container">
+
+        <a href="weights-bars.html" class="box">
+            <img src="images/category1.webp" alt="">
+            <div class="content">
+                <span></span>
+                <h3></h3>
+            </div>
+        </a>
+
+        <a href="#" class="box">
+            <img src="images/category2.jpg" alt="">
+            <div class="content">
+                <span></span>
+                <h3></h3>
+            </div>
+        </a>
+
+        <a href="#" class="box">
+            <img src="images/category3.jpeg" alt="">
+            <div class="content">
+                <span></span>
+                <h3></h3>
+            </div>
+        </a>
+        
+    </div>
+
+</section>
+
+<!-- banner section ends -->
+
+//css
+.alot-order{
+    border-radius: 5px 0px 5px 10px; 
+    transform: rotate(45deg);
+    background-color: #134074;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    padding: 5px 1px;
+    width: 200px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    position: absolute;
+    top: 20px;
+    right: -60px;
+  }
